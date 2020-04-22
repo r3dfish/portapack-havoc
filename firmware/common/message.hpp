@@ -80,10 +80,8 @@ public:
 		SamplerateConfig = 24,
 		BTLERxConfigure = 25,
 		NRFRxConfigure = 26,
-
 		TXProgress = 30,
 		Retune = 31,
-		
 		TonesConfigure = 32,
 		AFSKTxConfigure = 33,
 		PitchRSSIConfigure = 34,
@@ -99,18 +97,16 @@ public:
 		SSTVConfigure = 44,
 		SigGenConfig = 43,
 		SigGenTone = 44,
-		
 		POCSAGPacket = 45,
 		ADSBFrame = 46,
 		AFSKData = 47,
 		TestAppPacket = 48,
-		
 		RequestSignal = 49,
 		FIFOData = 50,
-		
 		AudioLevelReport = 51,
 		CodedSquelch = 52,
 		AudioSpectrum = 53,
+		SecplusPacket = 54,
 		MAX
 	};
 
@@ -328,6 +324,21 @@ public:
 	}
 
 	baseband::Packet packet;
+};
+
+class SecplusPacketMessage : public Message {
+public:
+	constexpr SecplusPacketMessage(
+		const Timestamp received_at,
+		const std::array<uint8_t, 40> pair
+	) : Message { ID::SecplusPacket },
+		received_at { received_at },
+		pair { pair }
+	{
+	}
+
+	Timestamp received_at;
+	std::array<uint8_t, 40> pair;
 };
 
 class TPMSPacketMessage : public Message {

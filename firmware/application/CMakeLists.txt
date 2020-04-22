@@ -143,6 +143,7 @@ set(CPPSRC
 	${COMMON}/portapack_io.cpp
 	${COMMON}/portapack_persistent_memory.cpp
 	${COMMON}/portapack_shared_memory.cpp
+	${COMMON}/secplus_packet.cpp
 	${COMMON}/sonde_packet.cpp
 	# ${COMMON}/test_packet.cpp
 	${COMMON}/tpms_packet.cpp
@@ -253,6 +254,8 @@ set(CPPSRC
 	apps/ui_whipcalc.cpp
 	apps/acars_app.cpp
 	apps/ais_app.cpp
+	apps/secplus_rx.cpp
+	apps/secplus_tx.cpp
 	apps/analog_audio_app.cpp
 	apps/analog_tv_app.cpp
 	apps/capture_app.cpp

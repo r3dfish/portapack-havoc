@@ -87,6 +87,18 @@ std::string to_string_dec_uint(
 	return q;
 }
 
+std::string to_string_dec_uint_left(
+	const uint32_t n,
+	const int32_t l,
+	const char fill
+) {
+	char p[16];
+	auto term = p + sizeof(p) - 1;
+	auto q = to_string_dec_uint_pad_internal(term, n, l, fill);
+
+	return q;
+}
+
 std::string to_string_dec_int(
 	const int32_t n,
 	const int32_t l,

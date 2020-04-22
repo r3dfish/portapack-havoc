@@ -437,6 +437,13 @@ set(MODE_CPPSRC
 )
 DeclareTargets(PREP replay)
 
+### Secplus RX
+
+set(MODE_CPPSRC
+	proc_secplus.cpp
+)
+DeclareTargets(PSEC secplus)
+
 ### Signal generator
 
 set(MODE_CPPSRC

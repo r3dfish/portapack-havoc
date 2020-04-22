@@ -69,6 +69,8 @@
 
 #include "acars_app.hpp"
 #include "ais_app.hpp"
+#include "secplus_rx.hpp"
+#include "secplus_tx.hpp"
 #include "analog_audio_app.hpp"
 #include "analog_tv_app.hpp"
 #include "capture_app.hpp"
@@ -358,6 +360,7 @@ ReceiversMenuView::ReceiversMenuView(NavigationView& nav) {
 		{ "POCSAG", 	ui::Color::green(),		&bitmap_icon_pocsag,	[&nav](){ nav.push<POCSAGAppView>(); } },
 		{ "Radiosnde", 	ui::Color::yellow(),	&bitmap_icon_sonde,		[&nav](){ nav.push<SondeView>(); } },
 		{ "TPMS Cars", 	ui::Color::green(),		&bitmap_icon_tpms,		[&nav](){ nav.push<TPMSAppView>(); } },
+		{ "Sec+", 		ui::Color::green(),	&bitmap_icon_aprs,		[&nav](){ nav.push<SecplusRXAppView>(); } },
 		{ "APRS", 		ui::Color::dark_grey(),	&bitmap_icon_aprs,		[&nav](){ nav.push<NotImplementedView>(); } },
 		{ "DMR", 		ui::Color::dark_grey(),	&bitmap_icon_dmr,		[&nav](){ nav.push<NotImplementedView>(); } },
 		{ "SIGFOX", 	ui::Color::dark_grey(),	&bitmap_icon_fox,		[&nav](){ nav.push<NotImplementedView>(); } }, // SIGFRXView
@@ -382,6 +385,7 @@ TransmittersMenuView::TransmittersMenuView(NavigationView& nav) {
 		{ "LGE tool", 				ui::Color::yellow(),	&bitmap_icon_lge,		[&nav](){ nav.push<LGEView>(); } },
 		{ "Mic",			ui::Color::green(),		&bitmap_icon_microphone,[&nav](){ nav.push<MicTXView>(); } },
 		{ "Morse",			ui::Color::green(),		&bitmap_icon_morse,		[&nav](){ nav.push<MorseView>(); } },
+		{ "Sec+",		ui::Color::yellow(), 	&bitmap_icon_aprs,	[&nav](){ nav.push<SecplusTXAppView>(); } },
 		{ "BurgerPgr",		ui::Color::yellow(), 	&bitmap_icon_burger,	[&nav](){ nav.push<CoasterPagerView>(); } },
 		//{ "Nuoptix DTMF", 	ui::Color::green(),		&bitmap_icon_nuoptix,	[&nav](){ nav.push<NuoptixView>(); } },
 		{ "OOK",			ui::Color::yellow(),	&bitmap_icon_remote,	[&nav](){ nav.push<EncodersView>(); } },
